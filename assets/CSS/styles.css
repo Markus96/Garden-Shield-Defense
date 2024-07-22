@@ -1,0 +1,22 @@
+#gameCanvas {
+    border: 1px solid black;
+}
+
+.end-point {
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    position: absolute;
+}
+
+/* Modal styles (simplified for example) */
+#gameOverModal, #instructionsModal, #statsModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+}
