@@ -2,7 +2,7 @@
     border: 1px solid black;
     display: block;
     margin: 0 auto;
-    background: url('assets/imgs/background.jpg') no-repeat center center;
+    background: url('../imgs/background.jpg') no-repeat center center;
     background-size: cover;
 }
 
@@ -14,25 +14,25 @@
 }
 
 .enemy-basic {
-    background-image: url('assets/imgs/enemy_basic.png');
+    background-image: url('../imgs/enemy_basic.png');
 }
 
 .enemy-fast {
-    background-image: url('assets/imgs/enemy_fast.png');
+    background-image: url('../imgs/enemy_fast.png');
 }
 
 .enemy-strong {
-    background-image: url('assets/imgs/enemy_strong.png');
+    background-image: url('../imgs/enemy_strong.png');
 }
 
 .tower-basic {
-    background-image: url('.../imgs/tower_basic.png');
+    background-image: url('../imgs/tower_basic.png');
 }
 
 .tower-fast {
-    background-image: url('assets/imgs/tower_fast.png');
+    background-image: url('../imgs/tower_fast.png');
 }
 
 .tower-strong {
-    background-image: url('assets/imgs/tower_strong.png');
+    background-image: url('../imgs/tower_strong.png');
 }
