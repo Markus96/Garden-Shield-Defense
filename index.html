@@ -3,32 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tower Defense Game</title>
     <link rel="stylesheet" href="assets/CSS/styles.css">
+    <title>Tower Defense Game</title>
+    <style>
+        #gameCanvas {
+            border: 1px solid black;
+            display: block;
+            margin: 0 auto;
+        }
+        .button-container {
+            text-align: center;
+            margin: 10px;
+        }
+        .stats-container {
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+        #endPoint {
+            position: absolute;
+            background-color: red;
+        }
+    </style>
 </head>
 <body>
+    <div class="button-container">
+        <button id="basicTowerBtn">Basic Tower</button>
+        <button id="fastTowerBtn">Fast Tower</button>
+        <button id="strongTowerBtn">Strong Tower</button>
+        <button id="easyBtn">Easy</button>
+        <button id="mediumBtn">Medium</button>
+        <button id="hardBtn">Hard</button>
+        <button id="startBtn">Start Next Level</button>
+        <button id="resetBtn">Reset Game</button>
+        <button id="instructionsBtn">Instructions</button>
+    </div>
+    <div class="stats-container">
+        <p>Money: <span id="money">200</span></p>
+        <p>Health: <span id="health">100</span></p>
+    </div>
     <canvas id="gameCanvas" width="800" height="600"></canvas>
-    <button id="basicTowerBtn">Basic Tower</button>
-    <button id="fastTowerBtn">Fast Tower</button>
-    <button id="strongTowerBtn">Strong Tower</button>
-    <button id="easyBtn">Easy</button>
-    <button id="mediumBtn">Medium</button>
-    <button id="hardBtn">Hard</button>
-    <button id="startBtn">Start</button>
-    <button id="resetBtn">Reset</button>
-    <button id="instructionsBtn">Instructions</button>
-    <div id="gameOverModal">
-        <p>Game Over</p>
+    <div id="instructions" class="hidden">
+        <h2>Instructions</h2>
+        <p>Place towers to defend against incoming enemies.</p>
         <button class="close">Close</button>
     </div>
-    <div id="instructionsModal">
-        <p>Instructions</p>
-        <button class="close">Close</button>
-    </div>
-    <div id="statsModal">
-        <p>Stats</p>
+    <div id="stats" class="hidden">
+        <h2>Stats</h2>
+        <p>Enemies Defeated: <span id="enemiesDefeated"></span></p>
+        <p>Money Earned: <span id="moneyEarned"></span></p>
         <button id="nextLevelBtn">Next Level</button>
     </div>
-    <script src="script.js"></script>
+    <script src="game.js"></script>
 </body>
 </html>
