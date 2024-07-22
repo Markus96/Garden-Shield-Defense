@@ -1,22 +1,38 @@
 #gameCanvas {
     border: 1px solid black;
+    display: block;
+    margin: 0 auto;
+    background: url('assets/imgs/background.jpg') no-repeat center center;
+    background-size: cover;
 }
 
-.end-point {
-    width: 40px;
-    height: 40px;
-    background-color: red;
+.enemy-basic, .enemy-fast, .enemy-strong, .tower-basic, .tower-fast, .tower-strong {
     position: absolute;
+    width: 30px; /* Size of the enemy/tower */
+    height: 30px;
+    background-size: cover;
 }
 
-/* Modal styles (simplified for example) */
-#gameOverModal, #instructionsModal, #statsModal {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border: 1px solid black;
+.enemy-basic {
+    background-image: url('assets/imgs/enemy_basic.png');
+}
+
+.enemy-fast {
+    background-image: url('assets/imgs/enemy_fast.png');
+}
+
+.enemy-strong {
+    background-image: url('assets/imgs/enemy_strong.png');
+}
+
+.tower-basic {
+    background-image: url('.../imgs/tower_basic.png');
+}
+
+.tower-fast {
+    background-image: url('assets/imgs/tower_fast.png');
+}
+
+.tower-strong {
+    background-image: url('assets/imgs/tower_strong.png');
 }

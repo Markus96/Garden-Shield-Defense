@@ -9,7 +9,7 @@ let currentLevel = 1;
 let path = [];
 const roadWidth = 4;
 
-// Define the background image
+// Define images for background, towers, and enemies
 const backgroundImage = new Image();
 backgroundImage.src = 'assets/imgs/background.jpg';
 backgroundImage.onerror = function() {
@@ -60,19 +60,19 @@ class Enemy {
             case 'fast':
                 this.speed = 0.6;
                 this.health = 50 + this.level * 10;
-                this.color = 'red';
+                this.cssClass = 'enemy-fast';
                 this.reward = 20;
                 break;
             case 'strong':
                 this.speed = 0.4;
                 this.health = 200 + this.level * 20;
-                this.color = 'green';
+                this.cssClass = 'enemy-strong';
                 this.reward = 50;
                 break;
             default:
                 this.speed = 0.3;
                 this.health = 100 + this.level * 15;
-                this.color = 'blue';
+                this.cssClass = 'enemy-basic';
                 this.reward = 30;
                 break;
         }
@@ -101,8 +101,11 @@ class Enemy {
     }
 
     draw() {
-        ctx.fillStyle = this.color;
-        ctx.fillRect(this.x, this.y, this.size, this.size);
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.fillStyle = this.cssClass;
+        ctx.fillRect(0, 0, this.size, this.size);
+        ctx.restore();
     }
 }
 
@@ -121,21 +124,21 @@ class Tower {
                 this.cooldown = 0;
                 this.fireRate = 10;
                 this.damage = 5;
-                this.color = 'yellow';
+                this.cssClass = 'tower-fast';
                 break;
             case 'strong':
                 this.range = tileSize * 4;
                 this.cooldown = 0;
                 this.fireRate = 60;
                 this.damage = 50;
-                this.color = 'green';
+                this.cssClass = 'tower-strong';
                 break;
             default:
                 this.range = tileSize * 2;
                 this.cooldown = 0;
                 this.fireRate = 30;
                 this.damage = 10;
-                this.color = 'blue';
+                this.cssClass = 'tower-basic';
                 break;
         }
         this.target = null;
@@ -168,11 +171,14 @@ class Tower {
     }
 
     draw() {
-        ctx.fillStyle = this.color;
-        ctx.fillRect(this.x - tileSize / 2, this.y - tileSize / 2, tileSize, tileSize);
+        ctx.save();
+        ctx.translate(this.x - tileSize / 2, this.y - tileSize / 2);
+        ctx.fillStyle = this.cssClass;
+        ctx.fillRect(0, 0, tileSize, tileSize);
+        ctx.restore();
 
         if (this.target) {
-            ctx.strokeStyle = this.color;
+            ctx.strokeStyle = this.cssClass;
             ctx.beginPath();
             ctx.moveTo(this.x, this.y);
             ctx.lineTo(this.target.x + this.target.size / 2, this.target.y + this.target.size / 2);
@@ -338,7 +344,7 @@ function createEndPoint() {
     endPoint.style.position = 'absolute';
     endPoint.style.width = `${tileSize}px`;
     endPoint.style.height = `${tileSize}px`;
-    endPoint.style.backgroundColor = 'red';
+    endPoint.style.backgroundImage = 'url("assets/imgs/pots.jpg")';
     endPoint.style.left = `${path[path.length - 1].x * tileSize}px`;
     endPoint.style.top = `${path[path.length - 1].y * tileSize}px`;
     document.body.appendChild(endPoint);
@@ -365,6 +371,19 @@ function gameLoop() {
 
 function drawGame() {
     ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
+
+    // Draw the path
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = roadWidth;
+    ctx.beginPath();
+    path.forEach((point, index) => {
+        if (index === 0) {
+            ctx.moveTo(point.x * tileSize + tileSize / 2, point.y * tileSize + tileSize / 2);
+        } else {
+            ctx.lineTo(point.x * tileSize + tileSize / 2, point.y * tileSize + tileSize / 2);
+        }
+    });
+    ctx.stroke();
 
     enemies.forEach(enemy => enemy.draw());
     towers.forEach(tower => tower.draw());
