@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/CSS/styles.css">
     <title>Tower Defense Game</title>
-    
+    <link rel="stylesheet" href="assets/CSS/styles.css">
 </head>
 <body>
     <div class="button-container">
@@ -19,21 +18,11 @@
         <button id="resetBtn">Reset Game</button>
         <button id="instructionsBtn">Instructions</button>
     </div>
-    <div class="stats-container">
-        <p>Money: <span id="money">200</span></p>
-        <p>Health: <span id="health">100</span></p>
-    </div>
     <canvas id="gameCanvas" width="800" height="600"></canvas>
     <div id="instructions" class="hidden">
         <h2>Instructions</h2>
         <p>Place towers to defend against incoming enemies.</p>
         <button class="close">Close</button>
-    </div>
-    <div id="stats" class="hidden">
-        <h2>Stats</h2>
-        <p>Enemies Defeated: <span id="enemiesDefeated"></span></p>
-        <p>Money Earned: <span id="moneyEarned"></span></p>
-        <button id="nextLevelBtn">Next Level</button>
     </div>
     <script src="script.js"></script>
 </body>
