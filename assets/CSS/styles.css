@@ -26,7 +26,7 @@
 }
 
 .tower-basic {
-    background-image: url('../imgs/tower_basic.png');
+    background-image: url('../assets/imgs/basic_tower.png');
 }
 
 .tower-fast {
@@ -34,5 +34,5 @@
 }
 
 .tower-strong {
-    background-image: url('../imgs/tower_strong.png');
+    background-image: url('../imgs/strong_tower.png');
 }
