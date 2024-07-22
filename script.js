@@ -11,7 +11,7 @@ const roadWidth = 4;
 
 // Define the background image
 const backgroundImage = new Image();
-backgroundImage.src = 'img/background.jpg';
+backgroundImage.src = 'assets/imgs/background.jpg';
 backgroundImage.onerror = function() {
     console.error('Failed to load background.jpg');
 };
