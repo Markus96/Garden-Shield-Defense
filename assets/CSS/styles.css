@@ -1,38 +1,117 @@
-#gameCanvas {
-    border: 1px solid black;
-    display: block;
-    margin: 0 auto;
-    background: url('../imgs/background.jpg') no-repeat center center;
-    background-size: cover;
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
 }
 
-.enemy-basic, .enemy-fast, .enemy-strong, .tower-basic, .tower-fast, .tower-strong {
+.hidden {
+    display: none;
+}
+
+/* Main Menu */
+.menu {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.menu button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* Game Area */
+#game-container {
+    position: relative;
+}
+
+#difficulty-selection {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#difficulty-selection button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#map-container {
+    width: 1200px;
+    height: 450px;
+    margin: 20px auto;
+    background-image: url('assets/imgs/background.jpg');
+    background-size: cover;
+    position: relative;
+    border: 1px solid #ddd;
+}
+
+.turret {
     position: absolute;
-    width: 30px; /* Size of the enemy/tower */
-    height: 30px;
+    width: 60px;
+    height: 60px;
     background-size: cover;
+    border: 2px solid #000;
+    text-align: center;
+    line-height: 60px;
+    cursor: pointer;
+    user-select: none;
 }
 
-.enemy-basic {
-    background-image: url('../imgs/enemy_basic.png');
+.startbutton, .resetbutton {
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px;
 }
 
-.enemy-fast {
-    background-image: url('../imgs/enemy_fast.png');
+.startbutton {
+    top: 480px;
+    left: 150px;
 }
 
-.enemy-strong {
-    background-image: url('../imgs/enemy_strong.png');
+.resetbutton {
+    top: 480px;
+    left: 270px;
 }
 
-.tower-basic {
-    background-image: url('../assets/imgs/basic_tower.png');
+.statusbar {
+    position: absolute;
+    top: 480px;
+    left: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
-.tower-fast {
-    background-image: url('../imgs/tower_fast.png');
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.tower-strong {
-    background-image: url('../imgs/strong_tower.png');
+.popup button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }

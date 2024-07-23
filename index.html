@@ -7,23 +7,41 @@
     <link rel="stylesheet" href="assets/CSS/styles.css">
 </head>
 <body>
-    <div class="button-container">
-        <button id="basicTowerBtn">Basic Tower</button>
-        <button id="fastTowerBtn">Fast Tower</button>
-        <button id="strongTowerBtn">Strong Tower</button>
-        <button id="easyBtn">Easy</button>
-        <button id="mediumBtn">Medium</button>
-        <button id="hardBtn">Hard</button>
-        <button id="startBtn">Start Next Level</button>
-        <button id="resetBtn">Reset Game</button>
-        <button id="instructionsBtn">Instructions</button>
+    <!-- Main Menu -->
+    <div id="main-menu" class="menu">
+        <h1>Tower Defense Game</h1>
+        <button id="start-game">Start Game</button>
+        <button id="help-button">Help</button>
     </div>
-    <canvas id="gameCanvas" width="800" height="600"></canvas>
-    <div id="instructions" class="hidden">
-        <h2>Instructions</h2>
-        <p>Place towers to defend against incoming enemies.</p>
-        <button class="close">Close</button>
+
+    <!-- Game Area -->
+    <div id="game-container" class="hidden">
+        <div id="difficulty-selection">
+            <button data-difficulty="1">Easy</button>
+            <button data-difficulty="2">Medium</button>
+            <button data-difficulty="3">Hard</button>
+        </div>
+        <div id="map-container"></div>
+        <div id="turrets">
+            <div id="tower1" class="turret" data-cost="10" style="background-image: url('assets/images/tower1.png');">Tower 1<br />$10</div>
+            <div id="tower2" class="turret" data-cost="100" style="background-image: url('assets/images/tower2.png');">Tower 2<br />$100</div>
+            <div id="tower3" class="turret" data-cost="500" style="background-image: url('assets/images/tower3.png');">Tower 3<br />$500</div>
+        </div>
+        <div id="statusbar" class="statusbar">
+            <p>Cash: <span id="cash">$0</span> Score: <span id="score">0</span> Wave: <span id="wave">0</span> Lives: <span id="lives">0</span></p>
+        </div>
+        <div id="startbutton" class="startbutton hidden">Start!</div>
+        <div id="resetbutton" class="resetbutton hidden">Reset</div>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Help Pop-Up -->
+    <div id="help-popup" class="popup hidden">
+        <h2>Help</h2>
+        <p>Instructions for playing the game...</p>
+        <button id="close-help">Close</button>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/Java/script.js"></script>
 </body>
 </html>
