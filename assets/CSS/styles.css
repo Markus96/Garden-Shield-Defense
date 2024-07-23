@@ -25,6 +25,12 @@ body {
 /* Game Area */
 #game-container {
     position: relative;
+    width: 1200px;
+    height: 600px; /* Adjusted height to fit status bar */
+    margin: 20px auto;
+    background-image: url('assets/imgs/background.jpg'); /* Background for the entire game container */
+    background-size: cover; /* Ensure the background covers the container */
+    background-position: center; /* Center the background image */
 }
 
 #difficulty-selection {
@@ -40,25 +46,32 @@ body {
 }
 
 #map-container {
-    width: 1200px;
+    width: 100%;
     height: 450px;
-    margin: 20px auto;
-    background-image: url('assets/imgs/background.jpg');
-    background-size: cover;
+    background-image: url('assets/imgs/background.jpg'); /* Background for the game map */
+    background-size: cover; /* Ensure the background covers the map container */
+    background-position: center; /* Center the background image */
     position: relative;
     border: 1px solid #ddd;
 }
 
+/* Turret Container */
+#turrets {
+    display: flex;
+    justify-content: space-around; /* Space between turrets */
+    margin-top: 20px; /* Space above turrets */
+}
+
 .turret {
-    position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
     background-size: cover;
     border: 2px solid #000;
     text-align: center;
-    line-height: 60px;
+    line-height: 100px; /* Center text vertically */
     cursor: pointer;
     user-select: none;
+    position: relative; /* Needed for absolute positioning within parent */
 }
 
 .startbutton, .resetbutton {
@@ -76,26 +89,29 @@ body {
 }
 
 .startbutton {
-    top: 480px;
+    bottom: 60px;
     left: 150px;
 }
 
 .resetbutton {
-    top: 480px;
+    bottom: 60px;
     left: 270px;
 }
 
 .statusbar {
     position: absolute;
-    top: 480px;
+    bottom: 0;
     left: 20px;
     background-color: #333;
     color: #fff;
     padding: 10px;
     border-radius: 5px;
     font-size: 16px;
+    width: calc(100% - 40px); /* Adjust width to fit within the container */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
+/* Help Pop-Up */
 .popup {
     position: fixed;
     top: 50%;

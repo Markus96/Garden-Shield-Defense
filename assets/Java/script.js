@@ -17,6 +17,17 @@ document.addEventListener('DOMContentLoaded', function() {
     let wave = 0;
     let difficulty = 1;
 
+    // Define path as an array of coordinates
+    const path = [
+        { x: 50, y: 50 },
+        { x: 150, y: 50 },
+        { x: 150, y: 200 },
+        { x: 400, y: 200 },
+        { x: 400, y: 400 },
+        { x: 600, y: 400 },
+        { x: 600, y: 600 }
+    ];
+
     // Show game container and hide menu
     startButton.addEventListener('click', function() {
         mainMenu.classList.add('hidden');
@@ -67,9 +78,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (cash >= parseInt(selectedTurret.dataset.cost, 10)) {
                 const turretElement = document.createElement('div');
                 turretElement.classList.add('turret');
-                turretElement.style.left = `${x - 30}px`; // Center turret
-                turretElement.style.top = `${y - 30}px`; // Center turret
-                turretElement.style.backgroundImage = `url('assets/images/$-png')`;
+                turretElement.style.left = `${x - 50}px`; // Center turret
+                turretElement.style.top = `${y - 50}px`; // Center turret
+                turretElement.style.backgroundImage = `url('/workspace/Garden-Shield-Defense/assets/imgs/${selectedTurret.id}.png')`;
                 mapContainer.appendChild(turretElement);
                 cash -= parseInt(selectedTurret.dataset.cost, 10);
                 cashDisplay.textContent = `Cash: $${cash}`;
@@ -88,20 +99,64 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Spawn enemies
+    // Spawn enemies and make them follow the path
     function spawnEnemies(difficulty) {
         const enemyCount = wave * difficulty;
         for (let i = 0; i < enemyCount; i++) {
             const enemy = document.createElement('div');
             enemy.classList.add('enemy');
-            enemy.style.backgroundImage = `url('assets/images/enemy${(i % 3) + 1}.png')`;
+            enemy.style.backgroundImage = `url('assests/img/plant-pot.png')`;
             enemy.style.width = '50px';
             enemy.style.height = '50px';
             enemy.style.position = 'absolute';
-            enemy.style.top = `${Math.random() * (mapContainer.offsetHeight - 50)}px`;
-            enemy.style.left = `${Math.random() * (mapContainer.offsetWidth - 50)}px`;
+
+            // Place enemies at the start of the path
+            const startPosition = path[0];
+            enemy.style.left = `${startPosition.x}px`;
+            enemy.style.top = `${startPosition.y}px`;
             mapContainer.appendChild(enemy);
-            // Add enemy movement logic here
+
+            // Move enemies along the path
+            moveEnemyAlongPath(enemy, 0);
         }
+    }
+
+    function moveEnemyAlongPath(enemy, pathIndex) {
+        if (pathIndex >= path.length - 1) return;
+
+        const currentPoint = path[pathIndex];
+        const nextPoint = path[pathIndex + 1];
+
+        let startX = currentPoint.x;
+        let startY = currentPoint.y;
+        let endX = nextPoint.x;
+        let endY = nextPoint.y;
+
+        let dx = endX - startX;
+        let dy = endY - startY;
+        let distance = Math.sqrt(dx * dx + dy * dy);
+        let speed = 100 / distance; // Adjust speed as needed
+
+        let startTime = null;
+
+        function animate(time) {
+            if (!startTime) startTime = time;
+            let progress = (time - startTime) * speed;
+            if (progress > 1) progress = 1;
+
+            let x = startX + dx * progress;
+            let y = startY + dy * progress;
+
+            enemy.style.left = `${x}px`;
+            enemy.style.top = `${y}px`;
+
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            } else {
+                moveEnemyAlongPath(enemy, pathIndex + 1);
+            }
+        }
+
+        requestAnimationFrame(animate);
     }
 });
