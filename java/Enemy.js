@@ -1,3 +1,4 @@
+// Enemy.js
 class Enemy extends Sprite {
   constructor({ position = { x: 0, y: 0 }, health = 100 }) {
     super({
@@ -7,6 +8,7 @@ class Enemy extends Sprite {
         max: 7
       }
     });
+  
 
     this.position = position;
     this.width = 100;
@@ -17,8 +19,10 @@ class Enemy extends Sprite {
     };
     this.radius = 50;
     this.health = health;
-    this.velocity = { x: 0, y: 0 }; // Static, so set to 0
+    this.velocity = { x: 0, y: 0 };
+    this.waypointIndex = 0;
   }
+  
 
   draw() {
     super.draw();
@@ -39,6 +43,32 @@ class Enemy extends Sprite {
   update() {
     this.draw();
     super.update();
-    // No movement logic needed for a static enemy
+
+    // Calculate distance to next waypoint
+    const waypoint = waypoints[this.waypointIndex];
+    const dx = waypoint.x - this.center.x;
+    const dy = waypoint.y - this.center.y;
+    const distance = Math.hypot(dx, dy);
+
+    // Move towards next waypoint
+    const speed = 2; // Adjust speed as needed
+    this.velocity.x = (dx / distance) * speed;
+    this.velocity.y = (dy / distance) * speed;
+
+    // Update position
+    this.position.x += this.velocity.x;
+    this.position.y += this.velocity.y;
+    this.center = {
+      x: this.position.x + this.width / 2,
+      y: this.position.y + this.height / 2
+    };
+
+    // Check if reached waypoint
+    if (distance < speed) {
+      this.waypointIndex++;
+      if (this.waypointIndex >= waypoints.length) {
+        this.waypointIndex = 0; // Loop back to start or handle end of path
+      }
+    }
   }
 }

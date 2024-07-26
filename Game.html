@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower Defense Game</title>
+    <link rel="stylesheet" href="CSS/Game Styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div id="main-menu">
+        <button id="start-game">Start Game</button>
+        <button id="help-button">Help</button>
+    </div>
+    
+    <div id="game-container" class="game-container hidden">
+        <canvas></canvas>
+        <div id="gameOver" class="game-over">GAME OVER</div>
+        <div class="score-background"></div>
+        <div class="score-display">
+            <div class="coins">
+                <span class="coin-emoji">💰</span>
+                <div id="coins">100</div>
+            </div>
+            <div class="hearts">
+                <span class="heart-emoji">❤️</span>
+                <div id="hearts">10</div>
+            </div>
+        </div>
+    </div>
+    
+<div id="emailForm" class="hidden">
+  <form action="sendEmail.php" method="post">
+      <label for="email">Enter your email:</label>
+      <input type="email" id="email" name="email" required>
+      <input type="hidden" id="score" name="score" value="">
+      <button type="submit">Send Score</button>
+  </form>
+</div>
+
+
+    <script src="java/placementTilesData.js"></script>
+    <script src="java/waypoints.js"></script>
+    <script src="java/Movement.js"></script>
+    <script src="java/Building.js"></script>
+    <script src="java/Enemy.js"></script>
+    <script src="java/Fast enemy.js"></script>
+    <script src="java/PlacementTile.js"></script>
+    <script src="java/Projectile.js"></script>
+    <script src="java/index.js"></script>
+</body>
+
+</html>

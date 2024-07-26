@@ -1,0 +1,70 @@
+/* CSS/Menu Styles.css */
+
+/* General body styling */
+body.menu-page {
+    background: url('../img/Tower defence map.png') no-repeat center center fixed; /* Background image */
+    background-size: 200%; /* Start zoomed in (200% of the viewport) */
+    color: #fff; /* White text color for contrast */
+    font-family: 'Arial', sans-serif; /* Font family for text */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+
+    /* Animation for zoom effect */
+    animation: zoomOut 60s ease-out forwards; /* Adjust duration as needed */
+}
+
+/* Menu container styling */
+.menu-container {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for menu */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for a subtle 3D effect */
+}
+
+/* Heading styling */
+.menu-container h1 {
+    font-size: 2.5rem; /* Large font size for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+    color: #f5c518; /* Gold color for the heading */
+}
+
+/* Button styling */
+.menu-container button {
+    background: #f5c518; /* Gold background color for buttons */
+    border: none;
+    color: #000; /* Black text color */
+    font-size: 1.2rem; /* Slightly larger font size for readability */
+    padding: 10px 20px; /* Padding around button text */
+    margin: 10px; /* Space around buttons */
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+/* Button hover effect */
+.menu-container button:hover {
+    background: #e4b810; /* Slightly darker gold on hover */
+    transform: scale(1.05); /* Slightly larger button on hover */
+}
+
+/* Button active effect */
+.menu-container button:active {
+    background: #d4a810; /* Even darker gold when button is pressed */
+}
+
+/* Keyframes for zoom out effect */
+@keyframes zoomOut {
+    0% {
+        background-size: 200%; /* Start zoomed in */
+        background-position: center; /* Ensure the image is centered initially */
+    }
+    100% {
+        background-size: cover; /* End at cover */
+        background-position: center; /* Ensure the image is centered at the end */
+    }
+}

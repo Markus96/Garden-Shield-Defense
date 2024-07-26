@@ -4,7 +4,7 @@ class Projectile {
     this.radius = radius; // Define the radius of the projectile
     this.enemy = enemy;
     this.speed = 5; // Example speed
-    this.color = 'red'; // Example color
+    
   }
 
   update() {

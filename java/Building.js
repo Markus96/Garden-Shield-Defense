@@ -29,7 +29,6 @@ class Building {
       this.shoot();
     }
 
-    // Update projectiles
     this.projectiles.forEach((projectile, index) => {
       projectile.update();
       if (projectile.hasHitTarget()) {

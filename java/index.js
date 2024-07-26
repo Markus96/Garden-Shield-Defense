@@ -126,7 +126,7 @@ function animate() {
       // this is when a projectile hits an enemy
       if (distance < projectile.enemy.radius + projectile.radius) {
         // enemy health and enemy removal
-        projectile.enemy.health -= 20
+        projectile.enemy.health -= 1
         if (projectile.enemy.health <= 0) {
           const enemyIndex = enemies.findIndex((enemy) => {
             return projectile.enemy === enemy
@@ -196,3 +196,25 @@ window.addEventListener('mousemove', (event) => {
     }
   }
 })
+// Example game over handling in index.js
+function gameOver() {
+  document.getElementById('gameOver').style.display = 'block';
+  // Other game over logic like stopping game loop, etc.
+}
+
+// Example of calling gameOver function when game ends
+// This should be called when game over condition is met
+gameOver();
+
+function gameOver() {
+  document.getElementById('gameOver').style.display = 'block';
+  document.getElementById('emailForm').style.display = 'block';
+  document.getElementById('score').value = getScore(); // Replace getScore() with your score fetching method
+}
+
+// Example score fetching method
+function getScore() {
+  // Implement this function to return the actual score
+  return 100; // Replace with actual score logic
+}
+
