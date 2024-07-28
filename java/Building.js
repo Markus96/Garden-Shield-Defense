@@ -11,8 +11,8 @@ class Building {
       y: this.position.y + this.height / 2
     };
     this.projectiles = [];
-    this.radius = 250; // Radius of the building's attack range
-    this.projectileRadius = 5; // Radius of the projectiles
+    this.radius = 50; // Radius of the building's attack range
+    this.projectileRadius = 3; // Radius of the projectiles
     this.target = null;
   }
 

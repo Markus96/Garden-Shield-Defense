@@ -1,6 +1,6 @@
 // Enemy.js
 class Enemy extends Sprite {
-  constructor({ position = { x: 0, y: 0 }, health = 100 }) {
+  constructor({ position = { x: 0, y: 0 }, health = 500 }) {
     super({
       position,
       imageSrc: 'img/crow.png',
@@ -17,7 +17,7 @@ class Enemy extends Sprite {
       x: this.position.x + this.width / 2,
       y: this.position.y + this.height / 2
     };
-    this.radius = 50;
+    this.radius = 1000;
     this.health = health;
     this.velocity = { x: 0, y: 0 };
     this.waypointIndex = 0;
@@ -35,7 +35,7 @@ class Enemy extends Sprite {
     c.fillRect(
       this.position.x,
       this.position.y - 15,
-      (this.width * this.health) / 100,
+      (this.width * this.health) / 1000,
       10
     );
   }

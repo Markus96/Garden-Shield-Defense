@@ -58,3 +58,21 @@ body {
     font-size: 35px;
     margin-right: 5px;
 }
+#game-container.hidden { display: none; }
+#game-container { position: relative; }
+#gameOver {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+}
+.score-background { position: absolute; top: 10px; left: 10px; }
+.score-display { position: absolute; top: 10px; right: 10px; }
+.coins, .hearts { display: flex; align-items: center; }
+.coin-emoji, .heart-emoji { margin-right: 5px; }
