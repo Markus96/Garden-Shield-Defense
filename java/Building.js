@@ -1,56 +1,59 @@
-class Building {
+class Building extends Sprite {
   constructor({ position = { x: 0, y: 0 } }) {
-    this.position = position;
-    this.width = 64;
-    this.height = 64;
-    this.imageSrc = './img/basic tower.png';
-    this.image = new Image();
-    this.image.src = this.imageSrc;
+    super({
+      position,
+      imageSrc: './img/basic tower.png',
+      frames: {
+        max: 19
+      },
+      offset: {
+        x: 0,
+        y: -80
+      }
+    })
+
+    this.width = 64 * 2
+    this.height = 64
     this.center = {
       x: this.position.x + this.width / 2,
       y: this.position.y + this.height / 2
-    };
-    this.projectiles = [];
-    this.radius = 50; // Radius of the building's attack range
-    this.projectileRadius = 3; // Radius of the projectiles
-    this.target = null;
+    }
+    this.projectiles = []
+    this.radius = 250
+    this.target
   }
 
   draw() {
-    // Draw the static image of the building
-    c.drawImage(this.image, this.position.x, this.position.y, this.width, this.height);
+    super.draw()
+
+    // c.beginPath()
+    // c.arc(this.center.x, this.center.y, this.radius, 0, Math.PI * 2)
+    // c.fillStyle = 'rgba(0, 0, 255, 0.2)'
+    // c.fill()
   }
 
   update() {
-    this.draw();
+    this.draw()
+    if (this.target || (!this.target && this.frames.current !== 0))
+      super.update()
 
-    if (this.target) {
-      // Shoot only if a target is set
-      this.shoot();
-    }
-
-    this.projectiles.forEach((projectile, index) => {
-      projectile.update();
-      if (projectile.hasHitTarget()) {
-        console.log('Projectile hit the target!');
-        this.projectiles.splice(index, 1); // Remove the projectile if it hit the target
-      }
-    });
+    if (
+      this.target &&
+      this.frames.current === 6 &&
+      this.frames.elapsed % this.frames.hold === 0
+    )
+      this.shoot()
   }
 
   shoot() {
-    if (this.target) {
-      // Create a new projectile and add it to the list
-      this.projectiles.push(
-        new Projectile({
-          position: {
-            x: this.center.x, // Start at the center of the building
-            y: this.center.y - this.height / 2 // Adjust the vertical position
-          },
-          radius: this.projectileRadius, // Pass projectile radius
-          enemy: this.target
-        })
-      );
-    }
+    this.projectiles.push(
+      new Projectile({
+        position: {
+          x: this.center.x - 20,
+          y: this.center.y - 110
+        },
+        enemy: this.target
+      })
+    )
   }
 }
