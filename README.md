@@ -28,7 +28,7 @@ Tower defense games are popular for recreational and educational purposes, yet m
 I had issues where the enemy pathing would not work and when i tried to use random roads it would make the roads look weird and sometimes would spawn multiple roads so you would notknow what road to use. I also had issues where the road would not spawn all together.
 
 ![alt text](<img/Road not loading issue.PNG>)
-![alt text](<img/Game in tiled.PNG>)
+![alt text](<img/Game in Tiled.PNG>)
 
 
 ### Solution
@@ -39,9 +39,9 @@ After some research I found a program called Tiled, would we let me create my ow
 
 I wanted a bird to be the enemy, so I used a crow I found on itch.io and made the script so that the bird would look like it is flying. Which I think adds to the over immersion of the game. I also used the same code to create an explosion like effect when the flower shot at the enemy, to give the game a more finished look.
 
-![alt text](<Crow.PNG>)
+![alt text](<img/crow.png>)
 
-![alt text](<Crow.PNG>)
+![alt text](<img/explosion.png>)
 
 
 
