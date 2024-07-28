@@ -1,6 +1,6 @@
 # Garden Flower Defense
 
-![alt text](<img/Game.PNG>) ![alt text](<img/Game.PNG>)
+![alt text](<img/Game.PNG>)
 
 ## Project Introduction
 ### Garden Flower Defense
@@ -27,7 +27,7 @@ Tower defense games are popular for recreational and educational purposes, yet m
 
 I had issues where the enemy pathing would not work and when i tried to use random roads it would make the roads look weird and sometimes would spawn multiple roads so you would notknow what road to use. I also had issues where the road would not spawn all together.
 
-![alt text](<Road not loading issue.PNG>) ![alt text](<img/Road not loading issue.PNG>)
+![alt text](<Road not loading issue.PNG>)
 
 
 ### Solution
@@ -38,24 +38,24 @@ After some research I found a program called Tiled, would we let me create my ow
 
 I wanted a bird to be the enemy, so I used a crow I found on itch.io and made the script so that the bird would look like it is flying. Which I think adds to the over immersion of the game. I also used the same code to create an explosion like effect when the flower shot at the enemy, to give the game a more finished look.
 
-![alt text](<Crow.PNG>) ![alt text](<img/crow.png>)
+![alt text](<Crow.PNG>)
 
-![alt text](<Crow.PNG>) ![alt text](<img/explosion.png>)
+![alt text](<Crow.PNG>)
 
 
 
 ## How I intended and how it turned out
 
 
-![alt text](<Crow.PNG>) ![alt text](<img/Menu Wireframe.PNG>)
-![alt text](<Crow.PNG>) ![alt text](<img/Menu Wireframe.PNG>)
+![alt text](<img/Menu Wireframe.PNG>)
+![alt text](<img/Menu Wireframe.PNG>)
 
 The menu I wanted to keep nice and simple with a help pop out explaining on what to do and also a background of the map the game takes place on. I added the zoom out feature to make the menu look more professional and engaging. I also added some background music to get the user my engaged. 
 
 All in all I think that the menu turned out what I wanted it to look lik. If I had more time I would have added a mute button for the music, as some users might not have liked it.
 
-![alt text](<Crow.PNG>) ![alt text](<img/Game Wireframe.PNG>)
-![alt text](<Crow.PNG>) ![alt text](<img/Game.PNG>)
+![alt text](<img/Game Wireframe.PNG>)
+![alt text](<img/Game.PNG>)
 
 I wanted the user to get right into the action, so the game starts straigh away. I also wanted to keep the interface nice and simple with the the coins and seeds being to the right and the send score at the button.
 
@@ -139,17 +139,6 @@ Live site adress: [Garden Flower Defence](https://markus96.github.io/Garden-Shie
 
 -----------------------------------
 
-## Credits 
-
--I got the idea for the responsive navigation bar using W3S [Responsive Navigation bar](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp)
-
--The slide show I got support from W3S [W3S Slide show](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+CSE101+2/courseware/be0e510a3aca4bccb6e0bba4cf7cf06b/d533998456514d97a88ce691537e00a6/)
-
--The form I got support with from the love running Code institute [The Code Institute Responsive Form](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+CSE101+2/courseware/be0e510a3aca4bccb6e0bba4cf7cf06b/d533998456514d97a88ce691537e00a6/)
-
--The pop up newsletter I got help from W3S  [How TO - Popup](https://www.w3schools.com/howto/howto_js_popup.asp)
-
------------------------------------
 
 ## Conclusion
 The "Garden Flower Defense" project successfully creates an engaging and strategic tower defense game designed to challenge and entertain players of all ages. By combining elements of traditional tower defense gameplay with modern web technologies, the project aims to offer a dynamic and interactive experience.
@@ -159,3 +148,15 @@ Despite the project's achievements, several issues have been identified that imp
 The identified problems, such as the incorrect display of background images and emojis, as well as the malfunctioning game over condition, highlight areas where further refinement and debugging are needed. By focusing on resolving these issues, the project can better meet its goal of providing a seamless and immersive gaming experience.
 
 Overall, "Garden Flower Defense" has the potential to stand out in the realm of web-based tower defense games. With ongoing improvements and adjustments, it is well-positioned to deliver a compelling and fun interactive experience that engages players and tests their strategic skills.
+
+## Credits 
+
+-Images I got from free pik [Images](https://www.freepik.com)
+
+-Game assets i got from Itch.io [Game Assets](https://www.itch.io)
+
+Tower Defence Game Support [Java support](https://www.javacodegeeks.com/2013/10/tower-defense-in-javafx.html)
+
+I also used a youtuber to get more information on how to create a game like this [Kaarin Gaming](https://www.youtube.com/playlist?list=PL4rzdwizLaxb0-TajNIp5DOoT_PAxhx0T)
+
+-The pop up newsletter I got help from W3S  [How TO - Popup](https://www.w3schools.com/howto/howto_js_popup.asp)
