@@ -1,3 +1,7 @@
+# Garden Flower Defense
+
+![alt text](<img/Game.PNG>) ![alt text](<img/Game.PNG>)
+
 ## Project Introduction
 ### Garden Flower Defense
 ### Description
