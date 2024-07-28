@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Menu</title>
-    <link rel="stylesheet" href="CSS/Menu Styles.css">
+    <link rel="stylesheet" href="CSS/MenuStyles.css">
 </head>
 <body class="menu-page">
     <div class="menu-container">
@@ -13,22 +13,22 @@
         <button id="help-button">Help</button>
     </div>
     
-    <!-- Background Music -->
+    
     <audio id="background-music" loop>
         <source src="music/background-music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
     <script>
-        // Start background music
+     
         document.getElementById('background-music').play();
 
-        // Redirect to index.html when the Start Game button is clicked
+       
         document.getElementById('start-game').addEventListener('click', function() {
-            window.location.href = 'Game.html'; // Adjust the path if needed
+            window.location.href = 'Game.html';
         });
 
-        // Optional: Handle Help button functionality
+        
         document.getElementById('help-button').addEventListener('click', function() {
         });
     </script>
