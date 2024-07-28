@@ -27,7 +27,8 @@ Tower defense games are popular for recreational and educational purposes, yet m
 
 I had issues where the enemy pathing would not work and when i tried to use random roads it would make the roads look weird and sometimes would spawn multiple roads so you would notknow what road to use. I also had issues where the road would not spawn all together.
 
-![alt text](<Road not loading issue.PNG>)
+![alt text](<img/Road not loading issue.PNG>)
+![alt text](<img/Game in tiled.PNG>)
 
 
 ### Solution
