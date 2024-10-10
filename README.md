@@ -9,13 +9,51 @@
  An exciting and strategic tower defense game designed for users of all ages. The primary goal of this project is to provide an entertaining platform where players can test their strategic planning and defensive skills to protect their garden from waves of pests.
 Objective=Create an interactive, easily navigable, and fun tower defense game using HTML, CSS, and JavaScript.
 
+## Development plan
+
+1. Look into what makes a tower defence game
+2. look into what plyers want into a tower defence game
+3. Think if a theme
+4. Great the code and style
+4. Look and fix any bugs
+
 ## Motivation and Inspiration
 ### Motivation 
 
 Offer a fun and interactive way for people to engage in strategic thinking. The project aims to fill the niche of enjoyable and intellectually stimulating content by combining traditional tower defense elements with modern web-based interactivity.
 Inspiration=Popular tower defense games like "Plants vs. Zombies" and classic strategy games.
 
-## Background Information
+# User Story 1
+[UserStory1]
+As = player
+I Want = to easily navigate the game’s interface
+So That = I can quickly start a game and understand how to play without any confusion
+
+# User Story 2
+[UserStory2]
+As = player
+I Want = to place various towers in my garden
+So That = I can defend my garden from waves of incoming pests
+
+# User Story 3
+[UserStory4]
+As = player
+I Want = to earn rewards or points for successfully defending my garden
+So That = I feel accomplished and can upgrade my defenses
+
+# User Story 4
+[UserStory5]
+As = player
+I Want = the game to be visually appealing with colorful designs
+So That = it provides a fun and engaging experience for players of all ages
+
+
+# User Story 5
+[UserStory7]
+As = player
+I Want = to see the health of my garden and the status of the pests
+So That = I can strategize effectively to protect my garden
+
 
 ### Background
 
@@ -25,7 +63,7 @@ Tower defense games are popular for recreational and educational purposes, yet m
 
 ### Enemy Pathing
 
-I had issues where the enemy pathing would not work and when i tried to use random roads it would make the roads look weird and sometimes would spawn multiple roads so you would notknow what road to use. I also had issues where the road would not spawn all together.
+I had issues where the enemy pathing would not work and when i tried to use random roads it would make the roads look weird and sometimes would spawn multiple roads so you would not know what road to use. I also had issues where the road would not spawn all together.
 
 ![alt text](<img/Road not loading issue.PNG>)
 ![alt text](<img/Game in Tiled.PNG>)
